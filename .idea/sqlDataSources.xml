@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DdlMappings">
+    <mapping uuid="e4b1ce81-05e2-4c9e-afe4-64adf5b7faa7" name="jee-exam@localhost Mapping">
+      <data-sources db="c750fc2e-d887-440f-a5a9-e2559b30aff7" />
+      <scope>
+        <node kind="schema" qname="jee-exam" />
+      </scope>
+    </mapping>
+  </component>
+</project>
