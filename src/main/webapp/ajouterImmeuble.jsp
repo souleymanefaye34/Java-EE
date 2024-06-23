@@ -112,11 +112,12 @@
         </div>
     </div>
     <div class="right">
-        <form action="ajouter-immeuble" method="post">
-            <input type="text" id="nom" name="nom" placeholder="Nom" required>
+        <form action="${pageContext.request.contextPath}/ajouter-immeuble" method="post">
+            <input type="text" id="nom" name="nom" placeholder="nom" required>
             <input type="text" id="adresse" name="adresse" placeholder="Adresse" required>
-            <textarea id="description" name="description" placeholder="Description" required></textarea>
-            <textarea id="equipements" name="equipements" placeholder="Équipements" required></textarea>
+
+            <textarea id="nbrUnite" name="nbrUnite" placeholder="nombre Unite" required></textarea>
+            <textarea id="equipement" name="equipement" placeholder="Équipements" required></textarea>
             <button type="submit">Ajouter</button>
         </form>
         <a href="listeImmeubles.jsp">Retour à la liste des immeubles</a>

@@ -1,7 +1,7 @@
 package sn.isi.jeeexamen2024.service;
 
 import sn.isi.jeeexamen2024.dao.UtilisateurDAO;
-import sn.isi.jeeexamen2024.entite.Utilisateurentity;
+import entities.Utilisateur;
 
 public class UtilisateurService {
     private UtilisateurDAO utilisateurDAO;
@@ -10,7 +10,7 @@ public class UtilisateurService {
         utilisateurDAO = new UtilisateurDAO();
     }
 
-    public void ajouterUtilisateur(Utilisateurentity utilisateur) {
+    public void ajouterUtilisateur(Utilisateur utilisateur) {
         utilisateurDAO.ajouterUtilisateur(utilisateur);
     }
 }

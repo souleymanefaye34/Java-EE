@@ -4,7 +4,7 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
-import sn.isi.jeeexamen2024.entite.Utilisateurentity;
+import entities.Utilisateur;
 
 public class UtilisateurDAO {
 
@@ -14,7 +14,7 @@ public class UtilisateurDAO {
         factory = new Configuration().configure().buildSessionFactory();
     }
 
-    public void ajouterUtilisateur(Utilisateurentity utilisateur) {
+    public void ajouterUtilisateur(Utilisateur utilisateur) {
         Session session = factory.openSession();
         Transaction transaction = null;
 
