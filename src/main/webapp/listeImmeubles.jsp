@@ -146,8 +146,8 @@
         <td><%= i.getEquipement() %></td>
         <td><%= i.getNbrUnite() %></td>
         <td>
-            <a href="modifierImmeuble?id=<%= i.getId() %>">Modifier</a>
-            <a href="supprimerImmeuble?id=<%= i.getId() %>" onclick="return confirm('Êtes-vous sûr de vouloir supprimer cet immeuble ?');">Supprimer</a>
+            <a href="modifier-immeuble?id=<%= i.getId() %>">Modifier</a>
+            <a href="supprimer-immeuble?id=<%= i.getId() %>" onclick="return confirm('Êtes-vous sûr de vouloir supprimer cet immeuble ?');">Supprimer</a>
         </td>
     </tr>
     <% } %>

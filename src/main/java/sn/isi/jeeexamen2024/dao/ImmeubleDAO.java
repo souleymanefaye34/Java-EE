@@ -30,4 +30,32 @@ public class ImmeubleDAO {
         entityManager.getTransaction().commit();
         entityManager.close();
     }
+
+    public void mettreAJour(Immeuble immeuble) {
+        EntityManager entityManager = emFactory.createEntityManager();
+        entityManager.getTransaction().begin();
+        entityManager.merge(immeuble);
+        entityManager.getTransaction().commit();
+        entityManager.close();
+    }
+
+    public void supprimer(Immeuble immeuble) {
+        EntityManager entityManager = emFactory.createEntityManager();
+        entityManager.getTransaction().begin();
+        Immeuble toDelete = entityManager.find(Immeuble.class, immeuble.getId());
+        if (toDelete != null) {
+            entityManager.remove(toDelete);
+        }
+        entityManager.getTransaction().commit();
+        entityManager.close();
+    }
+
+    public Immeuble getImmeubleById(int id) {
+        EntityManager entityManager = emFactory.createEntityManager();
+        try {
+            return entityManager.find(Immeuble.class, id);
+        } finally {
+            entityManager.close();
+        }
+    }
 }
