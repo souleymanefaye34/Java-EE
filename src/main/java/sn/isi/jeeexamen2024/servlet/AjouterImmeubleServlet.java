@@ -2,7 +2,7 @@ package sn.isi.jeeexamen2024.servlet;
 
 
 import sn.isi.jeeexamen2024.dao.ImmeubleDAO;
-import entities.Immeuble;
+import sn.isi.jeeexamen2024.entities.Immeuble;
 
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;

@@ -1,7 +1,6 @@
-package entities;
+package sn.isi.jeeexamen2024.entities;
 
-import jakarta.persistence.*;
-
+import javax.persistence.*;
 import java.math.BigDecimal;
 import java.sql.Date;
 
@@ -11,24 +10,22 @@ public class Paiement {
     @Id
     @Column(name = "id", nullable = false)
     private int id;
-    @Basic
-    @Column(name = "contrat_id", nullable = true)
-    private Integer contratId;
+
     @Basic
     @Column(name = "datePaiement", nullable = true)
     private Date datePaiement;
+
     @Basic
     @Column(name = "montant", nullable = true, precision = 2)
     private BigDecimal montant;
+
     @Basic
     @Column(name = "statut", nullable = true, length = 50)
     private String statut;
+
     @ManyToOne
-    @JoinColumn(name = "contrat_id", referencedColumnName = "id")
+    @JoinColumn(name = "contrat_id", referencedColumnName = "id", insertable = false, updatable = false)
     private Contratdelocation contratdelocationByContratId;
-    @ManyToOne
-    @JoinColumn(name = "contrat_id", referencedColumnName = "id")
-    private Contratdelocation contratdelocationByContratId_0;
 
     public int getId() {
         return id;
@@ -36,14 +33,6 @@ public class Paiement {
 
     public void setId(int id) {
         this.id = id;
-    }
-
-    public Integer getContratId() {
-        return contratId;
-    }
-
-    public void setContratId(Integer contratId) {
-        this.contratId = contratId;
     }
 
     public Date getDatePaiement() {
@@ -78,7 +67,6 @@ public class Paiement {
         Paiement paiement = (Paiement) o;
 
         if (id != paiement.id) return false;
-        if (contratId != null ? !contratId.equals(paiement.contratId) : paiement.contratId != null) return false;
         if (datePaiement != null ? !datePaiement.equals(paiement.datePaiement) : paiement.datePaiement != null)
             return false;
         if (montant != null ? !montant.equals(paiement.montant) : paiement.montant != null) return false;
@@ -90,7 +78,6 @@ public class Paiement {
     @Override
     public int hashCode() {
         int result = id;
-        result = 31 * result + (contratId != null ? contratId.hashCode() : 0);
         result = 31 * result + (datePaiement != null ? datePaiement.hashCode() : 0);
         result = 31 * result + (montant != null ? montant.hashCode() : 0);
         result = 31 * result + (statut != null ? statut.hashCode() : 0);
@@ -103,13 +90,5 @@ public class Paiement {
 
     public void setContratdelocationByContratId(Contratdelocation contratdelocationByContratId) {
         this.contratdelocationByContratId = contratdelocationByContratId;
-    }
-
-    public Contratdelocation getContratdelocationByContratId_0() {
-        return contratdelocationByContratId_0;
-    }
-
-    public void setContratdelocationByContratId_0(Contratdelocation contratdelocationByContratId_0) {
-        this.contratdelocationByContratId_0 = contratdelocationByContratId_0;
     }
 }

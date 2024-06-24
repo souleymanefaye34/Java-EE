@@ -1,6 +1,6 @@
 package sn.isi.jeeexamen2024.dao;
 
-import entities.Immeuble;
+import sn.isi.jeeexamen2024.entities.Immeuble;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;

@@ -1,9 +1,10 @@
-package entities;
+package sn.isi.jeeexamen2024.entities;
 
-import jakarta.persistence.*;
+import javax.persistence.*;
+import java.util.Collection;
 
 @Entity
-public class Utilisateur {
+public class Locataire {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     @Column(name = "id", nullable = false)
@@ -18,11 +19,13 @@ public class Utilisateur {
     @Column(name = "email", nullable = true, length = 255)
     private String email;
     @Basic
+    @Column(name = "telephone", nullable = true, length = 20)
+    private String telephone;
+    @Basic
     @Column(name = "motDePasse", nullable = true, length = 255)
     private String motDePasse;
-    @Basic
-    @Column(name = "role_id", nullable = false)
-    private int roleId;
+    @OneToMany(mappedBy = "locataireByLocataireId")
+    private Collection<Contratdelocation> contratdelocationsById;
 
     public int getId() {
         return id;
@@ -56,6 +59,14 @@ public class Utilisateur {
         this.email = email;
     }
 
+    public String getTelephone() {
+        return telephone;
+    }
+
+    public void setTelephone(String telephone) {
+        this.telephone = telephone;
+    }
+
     public String getMotDePasse() {
         return motDePasse;
     }
@@ -64,27 +75,19 @@ public class Utilisateur {
         this.motDePasse = motDePasse;
     }
 
-    public int getRoleId() {
-        return roleId;
-    }
-
-    public void setRoleId(int roleId) {
-        this.roleId = roleId;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        Utilisateur that = (Utilisateur) o;
+        Locataire locataire = (Locataire) o;
 
-        if (id != that.id) return false;
-        if (roleId != that.roleId) return false;
-        if (nom != null ? !nom.equals(that.nom) : that.nom != null) return false;
-        if (prenom != null ? !prenom.equals(that.prenom) : that.prenom != null) return false;
-        if (email != null ? !email.equals(that.email) : that.email != null) return false;
-        if (motDePasse != null ? !motDePasse.equals(that.motDePasse) : that.motDePasse != null) return false;
+        if (id != locataire.id) return false;
+        if (nom != null ? !nom.equals(locataire.nom) : locataire.nom != null) return false;
+        if (prenom != null ? !prenom.equals(locataire.prenom) : locataire.prenom != null) return false;
+        if (email != null ? !email.equals(locataire.email) : locataire.email != null) return false;
+        if (telephone != null ? !telephone.equals(locataire.telephone) : locataire.telephone != null) return false;
+        if (motDePasse != null ? !motDePasse.equals(locataire.motDePasse) : locataire.motDePasse != null) return false;
 
         return true;
     }
@@ -95,8 +98,16 @@ public class Utilisateur {
         result = 31 * result + (nom != null ? nom.hashCode() : 0);
         result = 31 * result + (prenom != null ? prenom.hashCode() : 0);
         result = 31 * result + (email != null ? email.hashCode() : 0);
+        result = 31 * result + (telephone != null ? telephone.hashCode() : 0);
         result = 31 * result + (motDePasse != null ? motDePasse.hashCode() : 0);
-        result = 31 * result + roleId;
         return result;
+    }
+
+    public Collection<Contratdelocation> getContratdelocationsById() {
+        return contratdelocationsById;
+    }
+
+    public void setContratdelocationsById(Collection<Contratdelocation> contratdelocationsById) {
+        this.contratdelocationsById = contratdelocationsById;
     }
 }

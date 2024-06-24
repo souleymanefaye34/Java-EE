@@ -111,14 +111,20 @@
         </div>
     </div>
     <div class="right">
-        <form action="register" method="post">
+        <form action="${pageContext.request.contextPath}/register" method="post">
             <input type="text" name="nom" placeholder="Nom" required>
             <input type="text" name="prenom" placeholder="Prénom" required>
+            <div class="form-group">
+                <label for="role">Rôle</label>
+                <select class="form-control" id="role" name="role_id" required>
+                    <option value="">Choisir un rôle</option>
+                    <option value="1">Propriétaire</option>
+                    <option value="2">Locataire</option>
+                </select>
+            </div>
             <input type="email" name="email" placeholder="Email" required>
-            <input type="text" name="telephone" placeholder="Téléphone" required>
-            <input type="text" name="username" placeholder="Nom d'utilisateur" required>
-            <input type="password" name="password" placeholder="Mot de passe" required>
-            <input type="text" name="role" placeholder="Role" required>
+            <input type="password" name="motDePasse" placeholder="Mot de passe" required>
+
             <button type="submit">S'inscrire</button>
         </form>
         <a href="Seconnecter.jsp">J'ai déjà un compte</a>

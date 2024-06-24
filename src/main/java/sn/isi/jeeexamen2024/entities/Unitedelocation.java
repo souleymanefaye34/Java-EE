@@ -1,7 +1,6 @@
-package entities;
+package sn.isi.jeeexamen2024.entities;
 
-import jakarta.persistence.*;
-
+import javax.persistence.*;
 import java.math.BigDecimal;
 import java.util.Collection;
 
@@ -25,8 +24,7 @@ public class Unitedelocation {
     private BigDecimal loyer;
     @OneToMany(mappedBy = "unitedelocationByUniteId")
     private Collection<Contratdelocation> contratdelocationsById;
-    @OneToMany(mappedBy = "unitedelocationByUniteId_0")
-    private Collection<Contratdelocation> contratdelocationsById_0;
+
 
     public int getId() {
         return id;
@@ -102,11 +100,5 @@ public class Unitedelocation {
         this.contratdelocationsById = contratdelocationsById;
     }
 
-    public Collection<Contratdelocation> getContratdelocationsById_0() {
-        return contratdelocationsById_0;
-    }
 
-    public void setContratdelocationsById_0(Collection<Contratdelocation> contratdelocationsById_0) {
-        this.contratdelocationsById_0 = contratdelocationsById_0;
-    }
 }

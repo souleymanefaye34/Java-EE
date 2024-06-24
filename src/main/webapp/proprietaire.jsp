@@ -129,18 +129,6 @@
             cursor: pointer;
             text-decoration: none;
         }
-        .inscription-button {
-            background-color: #f90;
-        }
-        .inscription-button:hover {
-            background-color: #e80;
-        }
-        .login-button {
-            background-color: blue;
-        }
-        .login-button:hover {
-            background-color: darkblue;
-        }
     </style>
 </head>
 <body>
@@ -149,12 +137,11 @@
         <div class="logo">
             <i class="fas fa-home"></i> <span>FAYE IMMOBILIER</span>
         </div>
-        <div class="banner">
-            <div class="buttons">
-                <a href="login.jsp" class="login-button">Connexion</a>
-                <a href="register.jsp" class="inscription-button">Inscription</a>
-            </div>
-        </div>
+        <ul>
+            <li><a href="Accueil.jsp" class="active">Accueil</a></li>
+            <li><a href="ajouterImmeuble.jsp">Ajouter Immeuble</a></li>
+            <li><a href="listeImmeubles.jsp">Lister Immeuble</a></li>
+        </ul>
     </nav>
 </header>
 <div class="hero">

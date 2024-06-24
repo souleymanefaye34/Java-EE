@@ -1,4 +1,4 @@
-package entities;
+package sn.isi.jeeexamen2024.entities;
 
 import javax.persistence.*;
 

@@ -4,11 +4,15 @@
     <session-factory>
         <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
         <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
-        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/jee-exam</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/jee_dbexam</property>
         <property name="hibernate.connection.username">root</property>
-        <property name="hibernate.connection.password"></property>
         <property name="hibernate.hbm2ddl.auto">update</property>
         <property name="hibernate.show_sql">true</property>
-        <mapping class="sn.isi.jeeexamen2024.entite.Utilisateurentity"/>
+        <mapping class="sn.isi.jeeexamen2024.entities.Contratdelocation"/>
+        <mapping class="sn.isi.jeeexamen2024.entities.Immeuble"/>
+        <mapping class="sn.isi.jeeexamen2024.entities.Locataire"/>
+        <mapping class="sn.isi.jeeexamen2024.entities.Paiement"/>
+        <mapping class="sn.isi.jeeexamen2024.entities.Unitedelocation"/>
+        <mapping class="sn.isi.jeeexamen2024.entities.Utilisateur"/>
     </session-factory>
 </hibernate-configuration>

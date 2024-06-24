@@ -6,21 +6,32 @@
              http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
     <persistence-unit name="GestionImmeublesPU" transaction-type="RESOURCE_LOCAL">
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
-        <class>entities.Contratdelocation</class>
-        <class>entities.Immeuble</class>
-        <class>entities.Locataire</class>
-        <class>entities.Paiement</class>
-        <class>entities.Unitedelocation</class>
-        <class>entities.Utilisateur</class>
+        <class>sn.isi.jeeexamen2024.entities.Contratdelocation</class>
+        <class>sn.isi.jeeexamen2024.entities.Immeuble</class>
+        <class>sn.isi.jeeexamen2024.entities.Locataire</class>
+        <class>sn.isi.jeeexamen2024.entities.Paiement</class>
+        <class>sn.isi.jeeexamen2024.entities.Unitedelocation</class>
+        <class>sn.isi.jeeexamen2024.entities.Utilisateur</class>
 
         <properties>
-            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/jee-exam"/>
+            <!-- Configuration de la connexion JDBC -->
+            <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/jee_dbexam"/>
             <property name="javax.persistence.jdbc.user" value="root"/>
-            <property name="javax.persistence.jdbc.password" value= ""/>
-            <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
+            <property name="javax.persistence.jdbc.password" value=""/>
+
+            <!-- Configuration du dialecte Hibernate pour MySQL 8 -->
             <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL8Dialect"/>
-            <property name="hibernate.show_sql" value="true"/>
+
+            <!-- Mode de mise à jour du schéma de la base de données (update, create, validate, etc.) -->
             <property name="hibernate.hbm2ddl.auto" value="update"/>
+
+            <!-- Afficher les requêtes SQL dans la console -->
+            <property name="hibernate.show_sql" value="true"/>
+            <property name="hibernate.format_sql" value="true"/>
+
+            <!-- Propriétés supplémentaires -->
+            <!-- Assurez-vous que ces propriétés suivantes sont également correctement configurées -->
             <property name="hibernate.connection.url" value="jdbc:mysql://localhost:3306/jee_dbexam"/>
             <property name="hibernate.connection.driver_class" value="com.mysql.cj.jdbc.Driver"/>
             <property name="hibernate.connection.username" value="root"/>
