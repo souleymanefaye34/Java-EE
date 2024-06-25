@@ -6,6 +6,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 import jakarta.servlet.ServletException;
 
 import javax.persistence.EntityManager;
@@ -33,19 +34,22 @@ public class LoginServlet extends HttpServlet {
         entityManager.close();
 
         if (utilisateur != null) {
-            // Connexion réussie, rediriger selon le rôle de l'utilisateur
+            // Connexion réussie, stocker l'ID de l'utilisateur dans la session
+            HttpSession session = request.getSession();
+            session.setAttribute("utilisateurId", utilisateur.getId());
+
+            // Rediriger selon le rôle de l'utilisateur
             int roleId = utilisateur.getRoleId();
             if (roleId == 1) {
-                // Rediriger vers la page client
+                // Rediriger vers la page propriétaire
                 response.sendRedirect("proprietaire.jsp");
             } else if (roleId == 2) {
-                // Rediriger vers la page propriétaire
+                // Rediriger vers la page locataire
                 response.sendRedirect("locataire.jsp");
-            }
-            else if (roleId == 0) {
-                // Rediriger vers la page propriétaire
+            } else if (roleId == 0) {
+                // Rediriger vers la page administrateur
                 response.sendRedirect("admin.jsp");
-            }else {
+            } else {
                 // Rôle non reconnu, rediriger vers une page d'erreur
                 response.sendRedirect("error.jsp");
             }

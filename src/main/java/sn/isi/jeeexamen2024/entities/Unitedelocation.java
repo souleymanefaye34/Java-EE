@@ -24,6 +24,9 @@ public class Unitedelocation {
     private BigDecimal loyer;
     @OneToMany(mappedBy = "unitedelocationByUniteId")
     private Collection<Contratdelocation> contratdelocationsById;
+    @ManyToOne
+    @JoinColumn(name = "immeuble_id", referencedColumnName = "id", nullable = false)
+    private Immeuble immeuble;
 
 
     public int getId() {
@@ -64,6 +67,13 @@ public class Unitedelocation {
 
     public void setLoyer(BigDecimal loyer) {
         this.loyer = loyer;
+    }
+    public Immeuble getImmeuble() {
+        return immeuble;
+    }
+
+    public void setImmeuble(Immeuble immeuble) {
+        this.immeuble = immeuble;
     }
 
     @Override

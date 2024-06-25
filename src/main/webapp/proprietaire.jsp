@@ -141,6 +141,7 @@
             <li><a href="Accueil.jsp" class="active">Accueil</a></li>
             <li><a href="ajouterImmeuble.jsp">Ajouter Immeuble</a></li>
             <li><a href="listeImmeubles.jsp">Lister Immeuble</a></li>
+            <li><a href="ajoutUnitLocation.jsp">Ajouter une unite de location</a></li>
         </ul>
     </nav>
 </header>
