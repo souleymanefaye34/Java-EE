@@ -129,6 +129,12 @@
             cursor: pointer;
             text-decoration: none;
         }
+        .login-button{
+            background-color: blue;
+        }
+        .login-button:hover{
+            background-color: darkblue;
+        }
     </style>
 </head>
 <body>
@@ -142,7 +148,11 @@
             <li><a href="ajouterImmeuble.jsp">Ajouter Immeuble</a></li>
             <li><a href="listeImmeubles.jsp">Lister Immeuble</a></li>
             <li><a href="ajoutUnitLocation.jsp">Ajouter une unite de location</a></li>
+
         </ul>
+        <div>
+        <a href="login.jsp" class="login-button">Deconnexion</a>
+        </div>
     </nav>
 </header>
 <div class="hero">

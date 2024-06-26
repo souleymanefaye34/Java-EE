@@ -29,6 +29,63 @@ public class UtilisateurDAO {
         }
     }
 
+    public void mettreAJour(Utilisateur utilisateur) {
+        EntityManager em = emf.createEntityManager();
+        try {
+            em.getTransaction().begin();
+            em.merge(utilisateur);
+            em.getTransaction().commit();
+        } catch (Exception e) {
+            if (em.getTransaction().isActive()) {
+                em.getTransaction().rollback();
+            }
+            e.printStackTrace();
+        } finally {
+            em.close();
+        }
+    }
+    public void modifierUtilisateurs(EntityManager entityManager, Utilisateur utilisateur) {
+        entityManager.merge(utilisateur);
+    }
+
+    public void supprimer(int id) {
+        EntityManager em = emf.createEntityManager();
+        try {
+            em.getTransaction().begin();
+            Utilisateur utilisateur = em.find(Utilisateur.class, id);
+            if (utilisateur != null) {
+                em.remove(utilisateur);
+            }
+            em.getTransaction().commit();
+        } catch (Exception e) {
+            if (em.getTransaction().isActive()) {
+                em.getTransaction().rollback();
+            }
+            e.printStackTrace();
+        } finally {
+            em.close();
+        }
+    }
+
+    public List<Utilisateur> listerTous() {
+        EntityManager em = emf.createEntityManager();
+        try {
+            TypedQuery<Utilisateur> query = em.createQuery("SELECT u FROM Utilisateur u", Utilisateur.class);
+            return query.getResultList();
+        } finally {
+            em.close();
+        }
+    }
+
+    public Utilisateur trouverParId(int id) {
+        EntityManager em = emf.createEntityManager();
+        try {
+            return em.find(Utilisateur.class, id);
+        } finally {
+            em.close();
+        }
+    }
+
     // Méthode pour trouver un utilisateur par email et mot de passe
     public Utilisateur trouverParEmailEtMotDePasse(EntityManager entityManager, String email, String motDePasse) {
         EntityManager em = emf.createEntityManager();

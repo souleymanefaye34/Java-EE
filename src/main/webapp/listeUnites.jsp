@@ -77,16 +77,6 @@
 </head>
 <body>
 <header>
-    <nav>
-        <div class="logo">
-            <i class="fas fa-home"></i> <span>FAYE IMMOBILIER</span>
-        </div>
-        <ul>
-            <li><a href="Accueil.jsp" class="active">Accueil</a></li>
-            <li><a href="ajouterImmeuble.jsp">Ajouter Immeuble</a></li>
-            <li><a href="listeImmeubles.jsp">Lister Immeuble</a></li>
-        </ul>
-    </nav>
     <h1>Liste des Unités de Location</h1>
 </header>
 <a href="ajouterUnite.jsp" class="add-immeuble">Ajouter une nouvelle unité de location</a>

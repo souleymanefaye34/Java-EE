@@ -12,6 +12,7 @@
         <class>sn.isi.jeeexamen2024.entities.Paiement</class>
         <class>sn.isi.jeeexamen2024.entities.Unitedelocation</class>
         <class>sn.isi.jeeexamen2024.entities.Utilisateur</class>
+        <class>sn.isi.jeeexamen2024.entities.DemandeDeLocation</class>
 
         <properties>
             <!-- Configuration de la connexion JDBC -->

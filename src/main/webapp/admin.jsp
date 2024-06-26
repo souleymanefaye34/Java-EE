@@ -147,11 +147,11 @@
 </head>
 <body>
 <div class="sidebar">
-    <h3>CoreUI</h3>
+    <h3>Faye Immobilier</h3>
     <ul>
         <li><a href="#">Tableau de bord</a></li>
-        <li><a href="#">Ajouter Utilisateur</a></li>
-        <li><a href="#">Lister Utilisateur</a></li>
+
+        <li><a href="listeUtilisateurs.jsp">Lister les locataire</a></li>
         <li><a href="#">Journal d'activité </a></li>
         <li><a href="#">Composants</a></li>
         <li><a href="#">Paramétre</a></li>
